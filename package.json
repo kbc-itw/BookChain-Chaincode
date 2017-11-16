@@ -1,0 +1,28 @@
+{
+  "name": "bookchain-chaincode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kbc-itw/BookChain-Chaincode.git"
+  },
+  "author": "kbc-itw",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kbc-itw/BookChain-Chaincode/issues"
+  },
+  "homepage": "https://github.com/kbc-itw/BookChain-Chaincode#readme",
+  "dependencies": {
+    "fabric-shim": "^1.0.0-preview"
+  },
+  "devDependencies": {
+    "@types/log4js": "^2.3.5",
+    "@types/node": "^8.0.52",
+    "grpc": "^1.7.1",
+    "protobufjs": "^6.8.0"
+  }
+}
