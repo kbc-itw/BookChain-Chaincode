@@ -1,3 +1,26 @@
+/**
+ * 指定された検証用関数に、空文字列でも `true` が返却されるようになる
+ * 条件が加わった、新しい検証用関数を生成します。
+ * 
+ * @param validator 空文字列でない時に使用する検証用関数
+ * @returns 
+ */
+export function optional(validator: (s: string) => boolean): (s: string) => boolean {
+    return (str: string) => {
+        if (str === '') {
+            return true;
+        }
+        return validator(str);
+    };
+}
+
+export function boolean(str: string): boolean {
+    return str === 'true' || str === 'false';
+}
+
+export function uint(str: string): boolean {
+    return /^\d{1,16}$/.test(str);
+}
 
 export function uuid(str: string): boolean {
     return /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.test(str);
