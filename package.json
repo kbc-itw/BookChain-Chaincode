@@ -17,12 +17,20 @@
   },
   "homepage": "https://github.com/kbc-itw/BookChain-Chaincode#readme",
   "dependencies": {
+    "@types/chai": "^4.0.10",
+    "@types/mocha": "^2.2.44",
     "fabric-shim": "^1.0.0-preview"
   },
   "devDependencies": {
     "@types/log4js": "^2.3.5",
     "@types/node": "^8.0.52",
+    "chai": "^4.1.2",
     "grpc": "^1.7.1",
-    "protobufjs": "^6.8.0"
+    "mocha": "^4.0.1",
+    "protobufjs": "^6.8.0",
+    "ts-node": "^4.0.1",
+    "tslint": "^5.8.0",
+    "tslint-config-airbnb": "^5.4.2",
+    "typescript": "^2.6.2"
   }
 }
