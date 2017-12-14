@@ -3,7 +3,7 @@ declare module 'fabric-shim' {
     import 'node';
     import EventEmitter = require('events');
     import {Logger} from 'log4js';
-    import * as protobuf from "protobufjs";
+    import * as protobuf from 'protobufjs';
 
     class Shim {
 
@@ -26,7 +26,7 @@ declare module 'fabric-shim' {
          * Returns a standard response object with status code 200 and an optional payload
          * @param msg A message describing the error
          */
-        static error(msg: Buffer): Shim.Response;
+        static error(msg: Error | Buffer): Shim.Response;
 
         /**
          * Returns a log4js logger named after <code>name</code>
@@ -46,14 +46,14 @@ declare module 'fabric-shim' {
             streetAddress: string,
             organizationName: string,
             organizationalUnitName: string,
-            commonName: string
+            commonName: string,
         };
         issuer: {
             countryName: string,
             stateOrProvinceName: string,
             localityName: string,
             organizationName: string,
-            commonName: string
+            commonName: string,
         };
         notBefore: Date;
         notAfter: Date;
