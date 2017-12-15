@@ -2,7 +2,7 @@ import { ChaincodeMethodMapper } from './ChaincodeMethodMap';
 import { assertArgs } from '../util/assertArgs';
 import * as validate from '../util/validate';
 import { CouchQuery } from '../util/CouchQuery';
-import * as Shim from 'fabric-shim';
+import Shim = require('fabric-shim');
 import { ChaincodeStub } from 'fabric-shim';
 import { Chaincode } from './Chaincode';
 

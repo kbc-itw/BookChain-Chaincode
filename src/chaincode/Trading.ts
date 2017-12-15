@@ -120,10 +120,10 @@ async function createTrading(stub: ChaincodeStub, args: string[]): Promise<Buffe
         throw new Error('duplicate trading id: ' + id);
     }
 
-    const owner = args[0];
-    const borrower = args[1];
-    const isbn = args[2];
-    const lendAt = args[3];
+    const owner = args[1];
+    const borrower = args[2];
+    const isbn = args[3];
+    const lendAt = args[4];
 
     const trading = {
         id,

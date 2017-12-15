@@ -62,11 +62,11 @@ export namespace user {
 export namespace room {
 
     export function purpose(str: string): boolean {
-        return str === "rental" || str === "return";
+        return str === 'rental' || str === 'return';
     }
 
     export function role(str: string): boolean {
-        return str === "inviter" || str === "guest";
+        return str === 'inviter' || str === 'guest';
     }
 
 }

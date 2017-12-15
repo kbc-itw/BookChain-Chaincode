@@ -33,11 +33,10 @@ const ownershipMethods: ChaincodeMethodMapper = (name: string) => {
 async function getOwnership(stub: ChaincodeStub, args: string[]): Promise<Buffer> {
     assertArgs(args, [
         validate.user.locator,
-        validate.isbn13
+        validate.isbn13,
     ]);
 
-    const owner = args[0];
-    const isbn = args[1];
+    const [owner, isbn] = args;
 
     // 複合キーの生成
     const key = stub.createCompositeKey('ownership', [owner, isbn]);
@@ -68,10 +67,10 @@ async function getOwnershipList(stub: ChaincodeStub, args: string[]): Promise<Bu
         optional(validate.uint),
     ]);
 
-    const owner = args[0];
-    const isbn = args[1];
-    const limit = parseInt(args[2]);
-    const offset = parseInt(args[3]);
+    const [owner, isbn, limitStr, offsetStr] = args;
+
+    const limit = parseInt(limitStr, 10);
+    const offset = parseInt(offsetStr, 10);
 
     const query: CouchQuery = { selector: {} };
     if (owner) {
@@ -102,18 +101,18 @@ async function getOwnershipList(stub: ChaincodeStub, args: string[]): Promise<Bu
 async function createOwnership(stub: ChaincodeStub, args: string[]) {
     assertArgs(args, [
         validate.user.locator,
-        validate.isbn13
+        validate.isbn13,
+        validate.datetime,
     ]);
 
-    const owner = args[0];
-    const isbn = args[1];
+    const [owner, isbn, createdAt] = args;
 
-    const key = stub.createCompositeKey('ownership', [owner, isbn]);
+    const key = stub.createCompositeKey('ownership', args);
 
     const ownership = {
         owner,
         isbn,
-        createdAt: new Date().toISOString()
+        createdAt,
     };
 
     await stub.putState(key, Buffer.from(JSON.stringify(ownership)));
@@ -126,13 +125,12 @@ async function createOwnership(stub: ChaincodeStub, args: string[]) {
 async function deleteOwnership(stub: ChaincodeStub, args: string[]): Promise<void> {
     assertArgs(args, [
         validate.user.locator,
-        validate.isbn13
+        validate.isbn13,
     ]);
 
-    const owner = args[0];
-    const isbn = args[1];
+    const [owner, isbn] = args;
 
-    const key = stub.createCompositeKey('ownership', [owner, isbn]);
+    const key = stub.createCompositeKey('ownership', args);
 
     const currentState = await stub.getState(key);
 

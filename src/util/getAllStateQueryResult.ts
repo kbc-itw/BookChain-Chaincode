@@ -1,7 +1,7 @@
 import {
     QueryResult,
     StateQueryIterator
-} from "fabric-shim";
+} from 'fabric-shim';
 
 
 

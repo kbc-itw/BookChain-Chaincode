@@ -1,7 +1,7 @@
 import {
     ChaincodeInterface,
     ChaincodeStub,
-    Response
+    Response,
 } from 'fabric-shim';
 import Shim = require('fabric-shim');
 import { ChaincodeMethodMapper } from './ChaincodeMethodMap';
