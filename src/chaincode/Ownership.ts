@@ -1,9 +1,9 @@
 import { ChaincodeMethodMapper } from './ChaincodeMethodMap';
 import { ChaincodeStub } from 'fabric-shim';
-import { assertArgs } from './assertArgs';
-import * as validate from './validate';
-import { CouchQuery } from './CouchQuery';
-import { getAllStateQueryResult } from './getAllStateQueryResult';
+import { assertArgs } from '../util/assertArgs';
+import * as validate from '../util/validate';
+import { CouchQuery } from '../util/CouchQuery';
+import { getAllStateQueryResult } from '../util/getAllStateQueryResult';
 import { Chaincode } from './Chaincode';
 import Shim = require('fabric-shim');
 
