@@ -4,7 +4,7 @@ import { ChaincodeStub } from 'fabric-shim';
  * Chaincode中のメソッドとして実行される関数のシグネチャです。
  */
 export interface ChaincodeMethod {
-    (stub: ChaincodeStub, args: string[]): Promise<Buffer>;
+    (stub: ChaincodeStub, args: string[]): Promise<Buffer | void>;
 }
 
 /**

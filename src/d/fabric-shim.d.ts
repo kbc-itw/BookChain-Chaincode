@@ -593,13 +593,27 @@ declare module 'fabric-shim' {
 
         interface QueryResult {
             done: boolean;
-            value?: { key: string; value: Buffer; };
+            value: {
+                key: string;
+                value: Buffer;
+            };
+        }
+
+        interface HistoryQueryResult extends QueryResult {
+            value: {
+                key: string;
+                value: Buffer;
+                tx_id: string;
+                timestamp: protobuf.common.ITimestamp,
+                is_delete: boolean
+            };
         }
 
         export class StateQueryIterator extends CommonIterator {
         }
 
         export class HistoryQueryIterator extends CommonIterator {
+            next(): Promise<HistoryQueryResult>;
         }
 
     }

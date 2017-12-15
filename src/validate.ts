@@ -19,6 +19,7 @@ export function boolean(str: string): boolean {
 }
 
 export function uint(str: string): boolean {
+    // Number.MAX_SAFE_INTEGERが16桁のため、最大桁を16とする
     return /^\d{1,16}$/.test(str);
 }
 
