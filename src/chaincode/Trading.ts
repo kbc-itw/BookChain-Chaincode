@@ -4,8 +4,8 @@ import { assertArgs } from '../util/assertArgs';
 import { Chaincode } from './Chaincode';
 import * as validate from '../util/validate';
 import Shim = require('fabric-shim');
-import {CouchQuery} from "../util/CouchQuery";
-import {getAllStateQueryResult} from "../util/getAllStateQueryResult";
+import { CouchQuery } from '../util/CouchQuery';
+import { getAllStateQueryResult } from '../util/getAllStateQueryResult';
 
 
 /**
