@@ -8,5 +8,8 @@
     "start": "node chaincode/${chaincodeName}.js"
   },
   "author": "kbc-itw",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+		"fabric-shim": "unstable"
+	}
 }
