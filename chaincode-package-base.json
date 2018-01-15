@@ -1,0 +1,12 @@
+{
+  "name": "BookChain-Chaincode-${chaincodeName}",
+  "version": "1.0.0",
+  "description": "BookChain Chaincode script for ${chaincodeName}",
+  "main": "chaincode/${chaincodeName}.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node chaincode/${chaincodeName}.js"
+  },
+  "author": "kbc-itw",
+  "license": "MIT"
+}

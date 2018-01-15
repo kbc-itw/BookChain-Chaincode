@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
@@ -17,20 +18,23 @@
   },
   "homepage": "https://github.com/kbc-itw/BookChain-Chaincode#readme",
   "dependencies": {
-    "@types/chai": "^4.0.10",
-    "@types/mocha": "^2.2.44",
     "fabric-shim": "^1.0.0-preview"
   },
   "devDependencies": {
     "@types/log4js": "^2.3.5",
-    "@types/node": "^8.5.1",
+    "@types/node": "^9.3.0",
+    "@types/chai": "^4.1.0",
+    "@types/mocha": "^2.2.46",
     "chai": "^4.1.2",
     "grpc": "^1.8.0",
-    "mocha": "^4.0.1",
-    "protobufjs": "^6.8.3",
-    "ts-node": "^4.0.2",
-    "tslint": "^5.8.0",
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^4.0.0-alpha.1",
+    "mocha": "^4.1.0",
+    "protobufjs": "^6.8.4",
+    "ts-node": "^4.1.0",
+    "tslint": "^5.9.1",
     "tslint-config-airbnb": "^5.4.2",
-    "typescript": "^2.6.2"
+    "typescript": "^2.6.2",
+    "rimraf": "^2.6.2"
   }
 }
