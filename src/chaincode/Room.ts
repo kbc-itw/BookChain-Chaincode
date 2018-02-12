@@ -34,7 +34,7 @@ async function createRoom(stub: ChaincodeStub, args: string[]): Promise<Buffer> 
         validate.fqdn,
     ]);
 
-    const [id, purpose, inviter, host] = args;
+    const [id, purpose, inviter, host, createdAt] = args;
 
     const current = await stub.getState(id);
     if (current.toString()) {
@@ -46,6 +46,7 @@ async function createRoom(stub: ChaincodeStub, args: string[]): Promise<Buffer> 
         purpose,
         inviter,
         host,
+        createdAt
     };
 
     const newRoomAsBuffer = Buffer.from(JSON.stringify(newRoom));
