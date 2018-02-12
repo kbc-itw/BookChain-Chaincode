@@ -28,7 +28,7 @@ export function uuid(str: string): boolean {
 }
 
 export function fqdn(str: string): boolean {
-    return /^(?!:\/\/)([a-zA-Z0-9]+\.)?[a-zA-Z0-9][a-zA-Z0-9-]+\.[a-zA-Z]{2,6}?$/i.test(str);
+    return /^(?!:\/\/)([a-zA-Z0-9]+\.)?[a-zA-Z0-9][a-zA-Z0-9-]+\.[a-zA-Z]{2,6}?$/i.test(str) || str === 'localhost';
 }
 
 export function isbn13(str: string): boolean {
