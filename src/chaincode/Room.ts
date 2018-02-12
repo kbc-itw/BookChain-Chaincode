@@ -32,6 +32,7 @@ async function createRoom(stub: ChaincodeStub, args: string[]): Promise<Buffer> 
         validate.room.purpose,
         validate.user.locator,
         validate.fqdn,
+        validate.datetime
     ]);
 
     const [id, purpose, inviter, host, createdAt] = args;
