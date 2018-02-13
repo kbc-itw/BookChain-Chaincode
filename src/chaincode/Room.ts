@@ -4,6 +4,9 @@ import { ChaincodeStub } from 'fabric-shim';
 import { Chaincode } from './Chaincode';
 import { assertArgs } from '../util/assertArgs';
 import * as validate from '../util/validate';
+import * as sourceMapSupport from 'source-map-support';
+
+sourceMapSupport.install();
 
 
 /**

@@ -5,6 +5,9 @@ import { CouchQuery } from '../util/CouchQuery';
 import Shim = require('fabric-shim');
 import { ChaincodeStub } from 'fabric-shim';
 import { Chaincode } from './Chaincode';
+import * as sourceMapSupport from 'source-map-support';
+
+sourceMapSupport.install();
 
 
 /**

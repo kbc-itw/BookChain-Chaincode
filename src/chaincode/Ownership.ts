@@ -6,6 +6,9 @@ import { CouchQuery } from '../util/CouchQuery';
 import { getAllStateQueryResult } from '../util/getAllStateQueryResult';
 import { Chaincode } from './Chaincode';
 import Shim = require('fabric-shim');
+import * as sourceMapSupport from 'source-map-support';
+
+sourceMapSupport.install();
 
 
 /**
