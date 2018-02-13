@@ -6,6 +6,7 @@ import Shim = require('fabric-shim');
 import { ChaincodeStub } from 'fabric-shim';
 import { Chaincode } from './Chaincode';
 import * as sourceMapSupport from 'source-map-support';
+import { getAllStateQueryResult } from '../util/getAllStateQueryResult';
 
 sourceMapSupport.install();
 
@@ -87,7 +88,8 @@ async function getUsersList(stub: ChaincodeStub, args: string[]): Promise<Buffer
         query.skip = offset;
     }
 
-    const results = await stub.getQueryResult(JSON.stringify(query));
+    const resultsIterator = await stub.getQueryResult(JSON.stringify(query));
+    const results = await getAllStateQueryResult(resultsIterator);
 
     return Buffer.from(JSON.stringify(results));
 

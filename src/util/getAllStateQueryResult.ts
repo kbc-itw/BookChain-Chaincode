@@ -14,9 +14,7 @@ export async function getAllStateQueryResult(iterator: StateQueryIterator): Prom
     for (let res: QueryResult = await iterator.next(); !res.done; res = await iterator.next()) {
 
         try {
-            results.push(
-                JSON.parse(res.value.value.toString('utf8'))
-            );
+            results.push(JSON.parse(res.value.value.toString('utf8')));
         } catch (err) {
             console.error(err);
         }
