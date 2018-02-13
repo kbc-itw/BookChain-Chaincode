@@ -10,6 +10,7 @@
   "author": "kbc-itw",
   "license": "MIT",
   "dependencies": {
-		"fabric-shim": "unstable"
-	}
+    "fabric-shim": "^1.1.0-alpha",
+    "source-map-support": "^0.5.3"
+  }
 }
