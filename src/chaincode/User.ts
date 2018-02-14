@@ -73,13 +73,13 @@ async function getUsersList(stub: ChaincodeStub, args: string[]): Promise<Buffer
     const query: CouchQuery = { selector: {} };
 
     if (host) {
-        query.selector.host = host;
+        query.selector.data.host = host;
     }
     if (id) {
-        query.selector.id = id;
+        query.selector.data.id = id;
     }
     if (name) {
-        query.selector.name = name;
+        query.selector.data.name = name;
     }
     if (limit) {
         query.limit = limit;

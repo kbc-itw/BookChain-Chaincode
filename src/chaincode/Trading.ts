@@ -77,16 +77,16 @@ async function getTradingsList(stub: ChaincodeStub, args: string[]): Promise<Buf
     const query: CouchQuery = { selector: {} };
 
     if (owner) {
-        query.selector.owner = owner;
+        query.selector.data.owner = owner;
     }
     if (borrower) {
-        query.selector.borrower = borrower;
+        query.selector.data.borrower = borrower;
     }
     if (isbn) {
-        query.selector.isbn = isbn;
+        query.selector.data.isbn = isbn;
     }
     if (isReturned) {
-        query.selector.$exists = 'returnedAt';
+        query.selector.data.$exists = 'returnedAt';
     }
     if (limit) {
         query.limit = limit;

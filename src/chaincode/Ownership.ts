@@ -77,10 +77,10 @@ async function getOwnershipList(stub: ChaincodeStub, args: string[]): Promise<Bu
 
     const query: CouchQuery = { selector: {} };
     if (owner) {
-        query.selector.owner = owner;
+        query.selector.data.owner = owner;
     }
     if (isbn) {
-        query.selector.isbn = isbn;
+        query.selector.data.isbn = isbn;
     }
     if (!isNaN(limit)) {
         query.limit = limit;
