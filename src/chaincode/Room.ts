@@ -55,7 +55,7 @@ async function createRoom(stub: ChaincodeStub, args: string[]): Promise<Buffer> 
 
     const newRoomAsBuffer = Buffer.from(JSON.stringify(newRoom));
 
-    stub.putState(id, newRoomAsBuffer);
+    await stub.putState(id, newRoomAsBuffer);
 
     return newRoomAsBuffer;
 }
