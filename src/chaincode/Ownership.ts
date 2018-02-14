@@ -76,6 +76,11 @@ async function getOwnershipList(stub: ChaincodeStub, args: string[]): Promise<Bu
     const offset = parseInt(offsetStr, 10);
 
     const query: CouchQuery = { selector: {} };
+
+    if (owner || isbn) {
+        query.selector.data = {};
+    }
+
     if (owner) {
         query.selector.data.owner = owner;
     }

@@ -72,6 +72,10 @@ async function getUsersList(stub: ChaincodeStub, args: string[]): Promise<Buffer
 
     const query: CouchQuery = { selector: {} };
 
+    if (host || id || name) {
+        query.selector.data = {};
+    }
+
     if (host) {
         query.selector.data.host = host;
     }

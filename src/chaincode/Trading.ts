@@ -76,6 +76,10 @@ async function getTradingsList(stub: ChaincodeStub, args: string[]): Promise<Buf
 
     const query: CouchQuery = { selector: {} };
 
+    if (owner || borrower || isbn || isReturned) {
+        query.selector.data = {};
+    }
+
     if (owner) {
         query.selector.data.owner = owner;
     }
