@@ -92,6 +92,8 @@ async function getUsersList(stub: ChaincodeStub, args: string[]): Promise<Buffer
         query.skip = offset;
     }
 
+    console.info(JSON.stringify(query));
+
     const resultsIterator = await stub.getQueryResult(JSON.stringify(query));
     const results = await getAllStateQueryResult(resultsIterator);
 
@@ -127,10 +129,10 @@ async function createUser(stub: ChaincodeStub, args: string[]): Promise<Buffer> 
         name,
     };
 
-    const newUserBuffer = Buffer.from(JSON.stringify(newUser));
-    await stub.putState(locator, newUserBuffer);
+    const newUserJSON = Buffer.from(JSON.stringify(newUser));
+    await stub.putState(locator, newUserJSON);
 
-    return newUserBuffer;
+    return newUserJSON;
 }
 
 

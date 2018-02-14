@@ -99,6 +99,8 @@ async function getTradingsList(stub: ChaincodeStub, args: string[]): Promise<Buf
         query.skip = offset;
     }
 
+    console.info(JSON.stringify(query));
+
     const iterator = await stub.getQueryResult(JSON.stringify(query));
     const results = getAllStateQueryResult(iterator);
 

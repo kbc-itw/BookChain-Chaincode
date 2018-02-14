@@ -94,6 +94,8 @@ async function getOwnershipList(stub: ChaincodeStub, args: string[]): Promise<Bu
         query.skip = offset;
     }
 
+    console.info(JSON.stringify(query));
+
     const resultIterator = await stub.getQueryResult(JSON.stringify(query));
 
     const results = await getAllStateQueryResult(resultIterator);
