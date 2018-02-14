@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const rimraf = require('rimraf');
 const typescript = require('gulp-typescript');
+const sourcemaps = require('gulp-sourcemaps');
 
 
 // 登録してあるチェインコード
@@ -37,8 +38,10 @@ gulp.task('build', ['rm'], () => {
         const tsProject = typescript.createProject('tsconfig.json');
 
         return tsProject.src()
+            .pipe(sourcemaps.init())
             .pipe(tsProject())
             .js
+            .pipe(sourcemaps.write('./'))
             .pipe(gulp.dest(chaincodeDir));
-    })
+    });
 });
