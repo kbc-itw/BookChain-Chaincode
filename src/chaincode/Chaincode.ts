@@ -53,6 +53,7 @@ export class Chaincode implements ChaincodeInterface {
 
         try {
             const payload = await method(stub, request.params);
+            if (payload) console.info(payload.toString());
             return Shim.success(payload);
         } catch (err) {
             console.error(err);
