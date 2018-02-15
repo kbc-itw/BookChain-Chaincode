@@ -77,8 +77,11 @@ async function guestJoinedRoom(stub: ChaincodeStub, args: string[]): Promise<Buf
         throw new Error(`not found room ${id}`);
     }
 
-    const guestBuffer = await stub.getState(guest);
-    if (!guestBuffer.toString()) {
+    const guestResponse = await stub.invokeChaincode(
+        'user',
+        [Buffer.from('getUser') ,Buffer.from(guest)],
+        'bookchain');
+    if (!guestResponse.payload.toString()) {
         throw new Error(`not found guest user ${guest}`);
     }
 
@@ -128,3 +131,5 @@ async function closeRoom(stub: ChaincodeStub, args: string[]): Promise<Buffer> {
 
 
 Shim.start(new Chaincode('room', roomMethods));
+
+`peer chaincode query -C bookchain -n user -c '{"Args":["getUser","huruikagi@localhost"]}'`;
