@@ -131,5 +131,3 @@ async function closeRoom(stub: ChaincodeStub, args: string[]): Promise<Buffer> {
 
 
 Shim.start(new Chaincode('room', roomMethods));
-
-`peer chaincode query -C bookchain -n user -c '{"Args":["getUser","huruikagi@localhost"]}'`;
